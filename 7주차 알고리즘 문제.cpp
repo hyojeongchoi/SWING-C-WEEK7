@@ -3,12 +3,12 @@ using namespace std;
 
 void main()
 {
-    int num; // ¼ö¿­ ±æÀÌ
-    int temp; // ÀÏ´Ü °¡Àå ÀÛÀº°Å ³Ö¾î³õÀ»°ÅÀÓ
-    int listnumber = 0; // ¹è¿­ À§Ä¡(¼ø¼­)¸¦ ÀÓ½Ã·Î ÀúÀåÇÒ ÇÔ¼ö
+    int num; // ìˆ˜ì—´ ê¸¸ì´
+    int temp; // ìˆ«ì êµí™˜í• ë•Œ ì €ì¥í•´ë†“ì„ ì„ì‹œ 
+    int listnumber = 0; // ë°°ì—´ ìœ„ì¹˜(ìˆœì„œ)ë¥¼ ì„ì‹œë¡œ ì €ì¥í•  í•¨ìˆ˜
     int list[100];
 
-    cout << "¼ö¿­ÀÇ ±æÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
+    cout << "ìˆ˜ì—´ì˜ ê¸¸ì´ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ";
     cin >> num;
 
     for (int i = 0; i < num; i++)
@@ -16,23 +16,23 @@ void main()
         cin >> list[i];
     }
 
-    cout << endl << "¼±ÅÃÁ¤·Ä °úÁ¤" << endl;
+    cout << endl << "ì„ íƒì •ë ¬ ê³¼ì •" << endl;
 
     for (int k = 0; k < num - 1; k++)
     {
-        listnumber = k; // ¹è¿­ ¼ø¼­¸¦ ÀÏ´Ü k·Î ÀúÀåÇÑ´Ù.
+        listnumber = k; // ë°°ì—´ ìˆœì„œë¥¼ ì¼ë‹¨ kë¡œ ì €ì¥í•œë‹¤.
         for (int l = k + 1; l < num; l++)
         {
-            if (list[l] < list[listnumber])  //list[listnumber]ÀÌ ±âÁØÀÌ µÇ¾î list[l]À» ÇÏ³ª¾¿ °Ë»çÇÑ´Ù.
+            if (list[l] < list[listnumber])  //list[listnumber]ì´ ê¸°ì¤€ì´ ë˜ì–´ list[l]ì„ í•˜ë‚˜ì”© ê²€ì‚¬í•œë‹¤.
             {
-                listnumber = l; //Ã³À½¿¡ ÀúÀåÇØµĞ list[listnumber=k]º¸´Ù ÀÛÀ¸¸é listnumberÀ» l·Î ÀúÀåÇÑ¤§.
+                listnumber = l; //ì²˜ìŒì— ì €ì¥í•´ë‘” list[listnumber=k]ë³´ë‹¤ ì‘ìœ¼ë©´ listnumberì„ lë¡œ ì €ì¥í•œã„·.
             }
         }
-        temp = list[listnumber]; //ÃÖ¼Ò°ª ÀúÀå º¯¼ö¿¡ ÀÏ´Ü list[listnumber=l]À» ÀúÀåÇØµÒ
-        list[listnumber] = list[k];//±×¸®°í ÃÖ¼Ò°ªÀÌ ÀÖ´Â À§Ä¡¿¡ list[k]¸¦ ÀúÀåÇÑ´Ù.-->Á¶±İ Àü±îÁö ÃÖ¼Ò°ªÀÌ¾ú´ø ¼ö
-        list[k] = temp;// Á» Àü±îÁö ÃÖ¼Ò°ªÀÌ ÀÖ´ø ¹è¿­ À§Ä¡¿¡ ÃÖ¼Ò°ªÀ» ´ëÀÔ½ÃÄÑ ¼ø¼­¸¦ ¹Ù²Û´Ù.
+        temp = list[listnumber]; //ìµœì†Œê°’ ì €ì¥ ë³€ìˆ˜ì— ì¼ë‹¨ list[listnumber=l]ì„ ì €ì¥í•´ë‘ 
+        list[listnumber] = list[k];//ê·¸ë¦¬ê³  ìµœì†Œê°’ì´ ìˆëŠ” ìœ„ì¹˜ì— list[k]ë¥¼ ì €ì¥í•œë‹¤.-->ì¡°ê¸ˆ ì „ê¹Œì§€ ìµœì†Œê°’ì´ì—ˆë˜ ìˆ˜
+        list[k] = temp;// ì¢€ ì „ê¹Œì§€ ìµœì†Œê°’ì´ ìˆë˜ ë°°ì—´ ìœ„ì¹˜ì— ìµœì†Œê°’ì„ ëŒ€ì…ì‹œì¼œ ìˆœì„œë¥¼ ë°”ê¾¼ë‹¤.
 
-        for (int q = 0; q < num; q++) //±×¸®°í for¹®À» »ç¿ëÇØ¼­ ¼±ÅÃÁ¤·ÄÀ» ÇÑ¹ø ½ÃÇàÇÒ¶§¸¶´Ù °á°ú¸¦ Ãâ·Â½ÃÅ´
+        for (int q = 0; q < num; q++) //ê·¸ë¦¬ê³  forë¬¸ì„ ì‚¬ìš©í•´ì„œ ì„ íƒì •ë ¬ì„ í•œë²ˆ ì‹œí–‰í• ë•Œë§ˆë‹¤ ê²°ê³¼ë¥¼ ì¶œë ¥ì‹œí‚´
         {
             cout << list[q] << "  ";
         }
