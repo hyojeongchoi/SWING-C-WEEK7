@@ -5,7 +5,7 @@ void main()
 {
     int num; // 수열 길이
     int temp; // 숫자 교환할때 저장해놓을 임시 
-    int listnumber = 0; // 배열 위치(순서)를 임시로 저장할 함수
+    int listnumber = 0; // 기준으로 
     int list[100];
 
     cout << "수열의 길이를 입력하세요 : ";
